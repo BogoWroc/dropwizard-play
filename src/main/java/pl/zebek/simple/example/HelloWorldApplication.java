@@ -4,24 +4,24 @@ import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 
-public class simpleApplication extends Application<simpleConfiguration> {
+public class HelloWorldApplication extends Application<HelloWorldConfiguration> {
 
     public static void main(final String[] args) throws Exception {
-        new simpleApplication().run(args);
+        new HelloWorldApplication().run(args);
     }
 
     @Override
     public String getName() {
-        return "simple";
+        return "hello-world";
     }
 
     @Override
-    public void initialize(final Bootstrap<simpleConfiguration> bootstrap) {
+    public void initialize(final Bootstrap<HelloWorldConfiguration> bootstrap) {
         // TODO: application initialization
     }
 
     @Override
-    public void run(final simpleConfiguration configuration,
+    public void run(final HelloWorldConfiguration configuration,
                     final Environment environment) {
         // TODO: implement application
     }
