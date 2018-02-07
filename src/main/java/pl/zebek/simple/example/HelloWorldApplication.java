@@ -3,6 +3,7 @@ package pl.zebek.simple.example;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
+import pl.zebek.simple.example.resources.HelloWorldResource;
 
 public class HelloWorldApplication extends Application<HelloWorldConfiguration> {
 
@@ -23,7 +24,11 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration> 
     @Override
     public void run(final HelloWorldConfiguration configuration,
                     final Environment environment) {
-        // TODO: implement application
+        final HelloWorldResource resource = new HelloWorldResource(
+                configuration.getTemplate(),
+                configuration.getDefaultName()
+        );
+        environment.jersey().register(resource);
     }
 
 }
